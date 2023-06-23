@@ -1,6 +1,4 @@
-﻿
-
-namespace LearningCSharp;
+﻿namespace LearningCSharp;
 
 enum OrderStatus : int
 { 

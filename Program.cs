@@ -1,4 +1,5 @@
 ﻿using System;
+using LearningCSharp.Entities;
 
 namespace LearningCSharp;
 
