@@ -1,19 +1,12 @@
-﻿using LearningCSharp.Entities.Enums;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace LearningCSharp.Entities;
-
-internal class Worker
+namespace LearningCSharp.Entities
 {
-    public string? Name { get; set; }
-
-    public WorkerLevel Level { get; set; }
-
-    public double BaseSalary { get; set; }
-
-    public Department Department { get; set; }
-
-    public Worker ()
+    internal class Worker
     {
-
     }
 }

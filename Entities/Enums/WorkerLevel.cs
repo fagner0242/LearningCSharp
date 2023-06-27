@@ -1,8 +1,12 @@
-﻿namespace LearningCSharp.Entities.Enums;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-enum WorkerLevel : int
+namespace LearningCSharp.Entities.Enums
 {
-    Junior = 0,
-    MidLevel = 1,
-    Senior = 2
+    internal class WorkerLevel
+    {
+    }
 }

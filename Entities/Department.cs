@@ -1,16 +1,12 @@
-﻿namespace LearningCSharp.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-internal class Department
+namespace LearningCSharp.Entities
 {
-    public string? Name { get; set; }
-
-    public Department()
+    internal class Department
     {
-
-    }
-
-    public Department (string name)
-    {
-        Name = name;
     }
 }
