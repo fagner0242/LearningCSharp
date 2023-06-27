@@ -1,4 +1,5 @@
 ﻿using LearningCSharp.Entities;
+using System; 
 
 namespace LearningCSharp;
 
@@ -6,22 +7,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Order order = new()
-        {
-            Id = 10,
-            OrderTime = DateTime.Now,
-            Status = OrderStatus.pendingPayment
-        };
+        Department department = new();
 
-        Console.WriteLine(order);
+        Console.Write("Enter department's name: ");
+        department.Name = Console.ReadLine()!;
 
-        string txt = OrderStatus.pendingPayment.ToString();
+        Console.WriteLine("Enter worker data: ");
 
-        OrderStatus os = Enum.Parse<OrderStatus>(txt);
-        //or
-        //OrderStatus os = Enum.Parse<OrderStatus>("pendingPayment");
+        Console.Write("Name: ");
+        string name = Console.ReadLine()!;
 
-        Console.WriteLine(txt);
-        Console.WriteLine(os);
+        
     }
 }
