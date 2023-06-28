@@ -27,5 +27,43 @@ class Program
         Department department = new(departmentName);
 
         Worker worker = new(name, workerLevel, baseSalary, department);
+
+        Console.Write("How many contracts to this worker? ");
+        int numberOfContracts = int.Parse(Console.ReadLine()!);
+
+        for (int i = 1; i <= numberOfContracts; i++)
+        {
+            Console.WriteLine($"Enter #{i} contract data:");
+
+            Console.Write("Date (DD/MM/YYYY): ");
+            DateTime dateTime = DateTime.Parse(Console.ReadLine()!);
+
+            Console.Write("Value per hour: ");
+            double valuePerHour = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
+
+            Console.Write("Duration (hours): ");
+            int duration = int.Parse(Console.ReadLine()!);
+
+            HourContract contract = new(dateTime, valuePerHour, duration);
+
+            worker.AddContract(contract);
+        }
+
+        Console.WriteLine();
+
+        Console.Write("Enter month and yeat to calculate income (MM/YYYY): ");
+        string monthAndYear = Console.ReadLine()!;
+
+        int month = int.Parse(monthAndYear.Substring(0, 2));
+
+        int year = int.Parse(monthAndYear.Substring(3));
+
+        Console.Write("Name: ");
+        Console.WriteLine(worker.Name);
+
+        Console.WriteLine("Department: ");
+        Console.WriteLine(worker.Department!.Name);
+
+        Console.WriteLine($"Income for {monthAndYear}: {worker.Income(year, month):F2}");
     }
 }
