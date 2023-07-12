@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Collections.Generic;
-using LearningCSharp.Entities; 
+using LearningCSharp.Entities;
 
 namespace LearningCSharp;
 
@@ -9,7 +9,6 @@ class Program
 {
     static void Main(string[] args)
     {
-
         Console.Write("How many employees will be registered? ");
         int numberOfEmployees = int.Parse(Console.ReadLine()!);
 
@@ -26,18 +25,27 @@ class Program
             string name = Console.ReadLine()!;
 
             Console.Write("Salary: ");
-            double salary = double.Parse(Console.ReadLine()!);
+            double salary = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
 
             employees.Add(new Employee(id, name, salary));
         }
 
-        Console.WriteLine("Enter the employee id that who will have salary increase: ");
-        int searchId = int.Parse(Console.ReadLine()!);
+        Console.Write("Enter the employee id that will have salary increase: ");
+        int employeeIdForIncrease = int.Parse(Console.ReadLine()!);
 
-        Employee employee = employees.Find(x => x.Id == searchId)!;
-        if ()
+        Employee employee = employees.Find(x => x.Id == employeeIdForIncrease)!;
+        if (employee is not null)
         {
+            Console.Write("Enter the percentage: ");
+            double percentage = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
+            employee.SalaryIncrease(percentage);
+        }
 
+        Console.WriteLine("Updated list of employees:");
+
+        for (int i = 0; i < numberOfEmployees; i++)
+        {
+            Console.WriteLine(employees[i]);
         }
     }
 }
