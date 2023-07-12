@@ -27,6 +27,8 @@ class Program
             Console.Write("Salary: ");
             double salary = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
 
+            Console.WriteLine();
+
             employees.Add(new Employee(id, name, salary));
         }
 
