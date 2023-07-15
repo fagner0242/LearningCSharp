@@ -9,43 +9,56 @@ class Program
 {
     static void Main(string[] args)
     {
+        string[] vect = Console.ReadLine()!.Split(' ');
+
+        int lines = int.Parse(vect[0]);
+        int columns = int.Parse(vect[1]);
+
+        int[,] mat = new int[lines, columns];
+
+        for (int i = 0; i < lines; i++)
+        {
+            string[] vector = Console.ReadLine()!.Split(' ');
+
+            for (int j = 0; j < columns; j++)
+            {
+                mat[i, j] = int.Parse(vector[j]);
+            }
+        }
+
         int number = int.Parse(Console.ReadLine()!);
-        //3
 
-        int[,] mat = new int[number ,number];
-
-        for (int line = 0; line < number; line++)
+        for (int i = 0; i < lines; i++)
         {
-            string[] values = Console.ReadLine()!.Split(' ');
-
-            for (int column = 0; column < number; column++)
+            for (int j = 0; j < columns; j++)
             {
-                mat[line, column] = int.Parse(values[column]);
-            }
-        }
-
-        Console.WriteLine("Main diagonal:");
-
-        int sum = 0;
-
-        for (int line = 0; line < number; line++)
-        {
-            for (int column = 0; column < number; column++)
-            {
-                if (line == column)
+                if (mat[i, j] == number)
                 {
-                    Console.Write($"{mat[line, column]} ");
+                    Console.WriteLine($"Position {i}, {j}:");
+
+                    if (j > 0)
+                    {
+                        Console.WriteLine($"Left: {mat[i, j - 1]}");
+                    }
+                    
+                    if (i > 0)
+                    {
+                        Console.WriteLine($"Up: {mat[i - 1, j]}");
+                    }
+
+                    if (j < columns)
+                    {
+                        Console.WriteLine($"Right: {mat[i, j + 1]}");
+                    }
+
+                    if (i < lines)
+                    {
+                        Console.WriteLine($"Down: {mat[i + 1, j]}");
+                    }
                 }
 
-                if (mat[line, column] < 0)
-                {
-                    sum++;
-                }
+                
             }
         }
-
-        Console.WriteLine();
-
-        Console.WriteLine($"Negative numbers = {sum}");
     }
 }
