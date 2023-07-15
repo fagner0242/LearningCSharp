@@ -10,6 +10,7 @@ class Program
     static void Main(string[] args)
     {
         string[] vect = Console.ReadLine()!.Split(' ');
+        // 3 4
 
         int lines = int.Parse(vect[0]);
         int columns = int.Parse(vect[1]);
@@ -19,6 +20,9 @@ class Program
         for (int i = 0; i < lines; i++)
         {
             string[] vector = Console.ReadLine()!.Split(' ');
+            // 10 8 15 12
+            //21 11 23 8
+            //14 5 13 19
 
             for (int j = 0; j < columns; j++)
             {
@@ -27,6 +31,7 @@ class Program
         }
 
         int number = int.Parse(Console.ReadLine()!);
+        //8
 
         for (int i = 0; i < lines; i++)
         {
@@ -46,12 +51,12 @@ class Program
                         Console.WriteLine($"Up: {mat[i - 1, j]}");
                     }
 
-                    if (j < columns)
+                    if (j < columns - 1)
                     {
                         Console.WriteLine($"Right: {mat[i, j + 1]}");
                     }
 
-                    if (i < lines)
+                    if (i < lines - 1)
                     {
                         Console.WriteLine($"Down: {mat[i + 1, j]}");
                     }
