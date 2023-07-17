@@ -9,13 +9,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        int? x = null;
-        int? y = 5;
+        double price = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
 
-        int a = x ?? 10;
-        int b = y ?? 10;
+        double descount = (price < 20.0) ? price * 0.1 : price * 0.05;
 
-        Console.WriteLine(a);
-        Console.WriteLine(b);
+        //if (price < 20.0)
+        //    descount = price * 0.1;
+        //else
+        //    descount = price * 0.05;
+
+        Console.WriteLine(descount);
     }
 }
