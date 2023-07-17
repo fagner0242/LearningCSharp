@@ -9,7 +9,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        int x = int.Parse(Console.ReadLine()!);
+        var x = int.Parse(Console.ReadLine()!);
 
         string day = string.Empty;
 
