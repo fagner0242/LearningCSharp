@@ -29,6 +29,7 @@ class Program
         string originalStringReplaced = original.Replace("abc", "xyz");
 
         bool nullTest = String.IsNullOrEmpty(original);
+        bool nullTest2 = String.IsNullOrWhiteSpace(original);
 
         Console.WriteLine($"Original: -{original}-");
         Console.WriteLine($"To Upper: -{originalToUpper}-");
@@ -41,5 +42,6 @@ class Program
         Console.WriteLine($"Replace('a', 'x': -{originalCharReplaced}-)");
         Console.WriteLine($"Replace('abc', 'xyz')-{originalStringReplaced}-");
         Console.WriteLine($"Is null or empty: {nullTest}");
+        Console.WriteLine($"Is null or white space: {nullTest2}");
     }
 }
