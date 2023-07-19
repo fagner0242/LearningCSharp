@@ -9,15 +9,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        double price = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
+        string original = "abcde FGHIJ ABC abc DEFG   ";
 
-        double descount = (price < 20.0) ? price * 0.1 : price * 0.05;
+        string originalToUpper = original.ToUpper();
+        string originalToLower = original.ToLower();
+        string originalTrimmed = original.Trim();
+        int originalSearching = original.IndexOf("bc");
+        int originalSearchingLast = original.LastIndexOf("bc");
 
-        //if (price < 20.0)
-        //    descount = price * 0.1;
-        //else
-        //    descount = price * 0.05;
-
-        Console.WriteLine(descount);
+        Console.WriteLine($"Original: -{original}-");
+        Console.WriteLine($"To Upper: -{originalToUpper}-");
+        Console.WriteLine($"To Lower: -{originalToLower}-");
+        Console.WriteLine($"Trim: -{originalTrimmed}-");
+        Console.WriteLine($"Index of ('bc'): {originalSearching}");
+        Console.WriteLine($"Last index of ('bc'): {originalSearchingLast}");
     }
 }
