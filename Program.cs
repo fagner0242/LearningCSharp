@@ -9,10 +9,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        string test = "abcd efghijk lmno";
+        DateTime d1 = DateTime.Now;
 
-        string indexTest = test[3..8];
-
-        Console.WriteLine(indexTest);
+        Console.WriteLine(d1);
+        Console.WriteLine(d1.Ticks);
     }
 }
