@@ -9,14 +9,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        DateTime d1 = DateTime.ParseExact("2000-08-15", "yyyy-MM-dd", CultureInfo.InvariantCulture);
-        DateTime d2 = DateTime.ParseExact("2000-08-15 13:05:58", "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+        TimeSpan t1 = new TimeSpan(0, 1, 30);
 
-        DateTime d3 = DateTime.ParseExact("15/08/2000 13:05:58", "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+        TimeSpan t2 = new(900000000L);
 
+        TimeSpan t3 = new(5, 7, 30, 20);
+        TimeSpan t4 = new(5, 7, 30, 20, 325);
 
-        Console.WriteLine(d1);
-        Console.WriteLine(d2);
-        Console.WriteLine(d3);
+        Console.WriteLine(t1);
+        Console.WriteLine(t1.Ticks);
+
+        Console.WriteLine(t2);
+
+        Console.WriteLine(t3);
+        Console.WriteLine(t4);
     }
 }
