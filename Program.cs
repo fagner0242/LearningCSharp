@@ -9,18 +9,25 @@ class Program
 {
     static void Main(string[] args)
     {
-        TimeSpan t1 = TimeSpan.FromDays(1.5);
-        TimeSpan t2 = TimeSpan.FromHours(1.5);
-        TimeSpan t3 = TimeSpan.FromMinutes(1.5);
-        TimeSpan t4 = TimeSpan.FromSeconds(1.5);
-        TimeSpan t5 = TimeSpan.FromMilliseconds(1.5);
-        TimeSpan t6 = TimeSpan.FromTicks(900000000L);
+        //DateTime d = new DateTime(2001, 8, 15, 13, 45, 58, 275);
+        //Kind: Unspecified
 
-        Console.WriteLine(t1);
-        Console.WriteLine(t2);
-        Console.WriteLine(t3);
-        Console.WriteLine(t4);
-        Console.WriteLine(t5);
-        Console.WriteLine(t6);
+        DateTime d = DateTime.Now;
+        //Kind: Local
+
+        Console.WriteLine(d);
+        Console.WriteLine(d.Date);
+        Console.WriteLine(d.Day);
+        Console.WriteLine(d.DayOfWeek);
+        Console.WriteLine(d.DayOfYear);
+        Console.WriteLine(d.Hour);
+        Console.WriteLine(d.Kind);
+        Console.WriteLine(d.Millisecond);
+        Console.WriteLine(d.Minute);
+        Console.WriteLine(d.Month);
+        Console.WriteLine(d.Second);
+        Console.WriteLine(d.Ticks);
+        Console.WriteLine(d.TimeOfDay);
+        Console.WriteLine(d.Year);
     }
 }
