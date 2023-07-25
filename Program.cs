@@ -9,19 +9,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        DateTime d = DateTime.Now;
+        DateTime d1 = DateTime.Now;
 
-        DateTime dateTime = new DateTime(2000, 10, 18);
+        DateTime d2 = d1.AddDays(3);
 
-        DateTime d1 = d.AddDays(7);
+        TimeSpan difference = d2.Subtract(d1);
 
-        DateTime d2 = d.AddHours(2);
+        Console.WriteLine(difference);
 
-        DateTime d3 = d.AddMinutes(5);
-
-        Console.WriteLine(d);
-        Console.WriteLine(d1);
-        Console.WriteLine(d2);
-        Console.WriteLine(d3);
     }
 }
