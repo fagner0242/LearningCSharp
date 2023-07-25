@@ -11,20 +11,17 @@ class Program
     {
         DateTime d = DateTime.Now;
 
-        string date = d.ToLongDateString();
-        string time = d.ToLongTimeString();
-        string shortDate = d.ToShortDateString();
-        string shortTime = d.ToShortTimeString();
+        DateTime dateTime = new DateTime(2000, 10, 18);
 
-        string stringFormatation = d.ToString("yyyy-MM-dd HH:mm:ss");
-        string formatationMilliSeconds = d.ToString("yyyy-MM-dd HH:mm:ss.fff");
+        DateTime d1 = d.AddDays(7);
+
+        DateTime d2 = d.AddHours(2);
+
+        DateTime d3 = d.AddMinutes(5);
 
         Console.WriteLine(d);
-        Console.WriteLine($"{date} {time}");
-        Console.WriteLine(shortDate);
-        Console.WriteLine(shortTime);
-        Console.WriteLine(d.ToString());
-        Console.WriteLine(stringFormatation);
-        Console.WriteLine(formatationMilliSeconds);
+        Console.WriteLine(d1);
+        Console.WriteLine(d2);
+        Console.WriteLine(d3);
     }
 }
