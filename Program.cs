@@ -9,25 +9,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        //DateTime d = new DateTime(2001, 8, 15, 13, 45, 58, 275);
-        //Kind: Unspecified
-
         DateTime d = DateTime.Now;
-        //Kind: Local
+
+        string date = d.ToLongDateString();
+        string time = d.ToLongTimeString();
+        string shortDate = d.ToShortDateString();
+        string shortTime = d.ToShortTimeString();
+
+        string stringFormatation = d.ToString("yyyy-MM-dd HH:mm:ss");
+        string formatationMilliSeconds = d.ToString("yyyy-MM-dd HH:mm:ss.fff");
 
         Console.WriteLine(d);
-        Console.WriteLine(d.Date);
-        Console.WriteLine(d.Day);
-        Console.WriteLine(d.DayOfWeek);
-        Console.WriteLine(d.DayOfYear);
-        Console.WriteLine(d.Hour);
-        Console.WriteLine(d.Kind);
-        Console.WriteLine(d.Millisecond);
-        Console.WriteLine(d.Minute);
-        Console.WriteLine(d.Month);
-        Console.WriteLine(d.Second);
-        Console.WriteLine(d.Ticks);
-        Console.WriteLine(d.TimeOfDay);
-        Console.WriteLine(d.Year);
+        Console.WriteLine($"{date} {time}");
+        Console.WriteLine(shortDate);
+        Console.WriteLine(shortTime);
+        Console.WriteLine(d.ToString());
+        Console.WriteLine(stringFormatation);
+        Console.WriteLine(formatationMilliSeconds);
     }
 }
