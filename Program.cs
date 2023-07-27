@@ -9,18 +9,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        TimeSpan t = new TimeSpan(1, 30, 30);
+        DateTime d1 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Local);
 
-        TimeSpan t2 = new TimeSpan(0, 10, 5);
+        DateTime d2 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Utc);
 
-        TimeSpan sum = t.Add(t2);
-        TimeSpan diff = t.Subtract(t2);
-        TimeSpan mult = t2.Multiply(2.0);
-        TimeSpan div = t.Divide(2.0);
+        DateTime d3 = new DateTime(2000, 8, 15, 13, 5, 58);
 
-        Console.WriteLine(sum);
-        Console.WriteLine(diff);
-        Console.WriteLine(mult);
-        Console.WriteLine(div);
+
+        Console.WriteLine(d1);
+        Console.WriteLine(d2);
+        Console.WriteLine(d3);
     }
 }
