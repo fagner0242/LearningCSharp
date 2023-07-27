@@ -9,20 +9,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        DateTime dateTime = DateTime.Now;
+        DateTime dateTime = DateTime.Parse("2000-08-15 13:05:58");
 
-        DateTime d1 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Local);
-
-        DateTime d2 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Utc);
-
-        Console.WriteLine($"d1: {d1}");
-        Console.WriteLine($"d1 Kind: {d1.Kind}");
-        Console.WriteLine($"d1 To Local: {d1.ToLocalTime()}");
-        Console.WriteLine($"d1 To Utc: {d1.ToUniversalTime()}");
+        DateTime dateTime2 = DateTime.Parse("2000-08-15T13:05:58Z");
 
         Console.WriteLine(dateTime);
-        Console.WriteLine(dateTime.ToUniversalTime());
+        Console.WriteLine($"DateTime Kind: {dateTime.Kind}");
+        Console.WriteLine($"DateTime To Local: {dateTime.ToLocalTime()}");
+        Console.WriteLine($"DateTime To Utc: {dateTime.ToUniversalTime()}");
 
-        Console.WriteLine(d2);
+        Console.WriteLine();
+
+        Console.WriteLine(dateTime2);
+        Console.WriteLine($"DateTime2 Kind: {dateTime2.Kind}");
+        Console.WriteLine($"DateTime2 To Local: {dateTime2.ToLocalTime()}");
+        Console.WriteLine($"DateTime2 To Utc: {dateTime2.ToUniversalTime()}");
+
+        Console.WriteLine(dateTime2.ToString("yyyy-MM-ddTHH:mm:ssZ"));
+        Console.WriteLine(dateTime2.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ"));
     }
 }
