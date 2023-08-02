@@ -19,5 +19,12 @@ class Program
         };
 
         Console.WriteLine(order);
+
+        string txt = OrderStatus.PendingPayment.ToString();
+
+        OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
+
+        Console.WriteLine(txt);
+        Console.WriteLine(os);
     }
 }
