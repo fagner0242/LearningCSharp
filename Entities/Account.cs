@@ -2,7 +2,7 @@
 
 internal class Account
 {
-    public int Number { get; set; }
+    public int Number { get; set; } 
 
     public string? Holder { get; set; }
 
@@ -10,16 +10,16 @@ internal class Account
 
     public Account() {}
 
-    public Account(int number, string? holder, double balance)
+    public Account(int number, string? holder, double balance)  
     {
         Number = number;
         Holder = holder;
         Balance = balance;
     }
 
-    public void WithDraw(double amount)
+    public virtual void WithDraw(double amount)
     {
-         Balance -= amount;
+         Balance -= amount + 5.0;
     }
 
     public void Deposit(double amount)
