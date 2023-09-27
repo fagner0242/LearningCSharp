@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace LearningCSharp.Entities;
+﻿namespace LearningCSharp.Entities;
 
 internal class BusinessAccount : Account
 {
-    public double LoanLimit { get; set; }
+    public double LoanLimit { get; private set; }
 
     public BusinessAccount() {}
 
@@ -16,6 +14,6 @@ internal class BusinessAccount : Account
     public void Loan(double amount)
     {
         if (amount <= LoanLimit)
-            Balance += amount; 
-    }  
+            Balance += amount - 10.0;
+    }
 }

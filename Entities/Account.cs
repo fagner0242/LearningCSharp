@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace LearningCSharp.Entities;
+﻿namespace LearningCSharp.Entities;
 
 internal class Account
 {
-    public int Number { get; private set; }
+    public int Number { get; set; }
 
-    public string? Holder { get; private set; }
+    public string? Holder { get; set; }
 
-    public double Balance { get; protected set; }
+    public double Balance { get; private protected set; }
 
     public Account() {}
 
@@ -19,13 +17,13 @@ internal class Account
         Balance = balance;
     }
 
-    public virtual void WithDraw(double amount)
+    public void WithDraw(double amount)
     {
-        Balance -= amount + 5.0;
+         Balance -= amount;
     }
 
     public void Deposit(double amount)
     {
-        Balance += amount;
+         Balance += amount;
     }
 }

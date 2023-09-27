@@ -1,21 +1,7 @@
 ﻿using LearningCSharp.Entities;
-using System;
-using System.Globalization;
-using System.Reflection.Metadata.Ecma335;
 
-namespace LearningCSharp;
+BusinessAccount account = new BusinessAccount(1802, "Bob", 100.0, 500.0);
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        Account mainAccount = new(1001, "Alex", 500.0);
-        Account savingsAccount = new SavingsAccount(1002, "Alex", 500.0, 0.01);
+Console.WriteLine(account.Balance);
 
-        mainAccount.WithDraw(10.0);
-        savingsAccount.WithDraw(10.0);
-
-        Console.WriteLine(mainAccount.Balance);
-        Console.WriteLine(savingsAccount.Balance);  
-    }
-} 
+account.Balance = 50.0;
