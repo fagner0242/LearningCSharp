@@ -1,15 +1,43 @@
 ﻿using LearningCSharp.Entities;
+using System.Globalization;
 
-Account account = new(1055, "Maria2", 500.0);
-Account account2 = new SavingsAccount(1006, "Maria3", 500.0, 0.01);
+Console.Write("Enter the number of employees: ");
+int numberOfEmployees = int.Parse(Console.ReadLine()!);
 
-account.WithDraw(10.0);
+List<Employee> employees = new List<Employee>();
 
-//Chamando WithDraw(Saque) o compilador não sabe que tipo esta sendo chamado.
-if (account2 is SavingsAccount)
+for (int i = 1; i <= numberOfEmployees; i++)
 {
-    account2.WithDraw(10.0);
+    Console.WriteLine($"Employee #{i} data:");
+
+    Console.Write("OutSourced (y/n)? ");
+    char outSourced = char.Parse(Console.ReadLine()!);
+
+    Console.Write("Name: ");
+    string name = Console.ReadLine()!;
+
+    Console.Write("Hours: ");
+    int hours = int.Parse(Console.ReadLine()!);
+
+    Console.Write("Value per hour: ");
+    double valuePerHour = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
+
+    if (outSourced == 'y')
+    {
+        Console.Write("Addtional charge: ");
+        double additionalCharge = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
+
+        Employee outSorcedEmployee = new OutSourcedEmployee(name, hours, valuePerHour, additionalCharge);
+        employees.Add(outSorcedEmployee);
+    }
+    else
+    {
+        Employee employee = new Employee(name, hours, valuePerHour);
+        employees.Add(employee);
+    }
 }
 
-Console.WriteLine(account.Balance);
-Console.WriteLine(account2.Balance);
+foreach (Employee employee in employees)
+{
+    Console.WriteLine($"{employee.Name} - $ {employee.Payment().ToString("F2", CultureInfo.InvariantCulture)}");
+}
