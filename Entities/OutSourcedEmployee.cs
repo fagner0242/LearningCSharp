@@ -13,7 +13,7 @@ internal class OutSourcedEmployee : Employee
         AdditionalCharge = additionalCharge;
     }
 
-    public override double Payment()
+    public sealed override double Payment()
     {
         return base.Payment() + AdditionalCharge * 110 / 100;
     }
