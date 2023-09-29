@@ -1,46 +1,46 @@
 ﻿using LearningCSharp.Entities;
+using System.Collections.Generic;
 using System.Globalization;
 
-Console.Write("Enter the number of employees: ");
-int numberOfEmployees = int.Parse(Console.ReadLine()!);
+Console.Write("Enter the number of products: ");
+int numberOfProducts = int.Parse(Console.ReadLine()!);
 
-List<Employee> employees = new List<Employee>();
+List<Product> products = new();
 
-for (int i = 1; i <= numberOfEmployees; i++)
+for (int i = 1; i <= numberOfProducts; i++)
 {
-    Console.WriteLine($"Employee #{i} data:");
+    Console.WriteLine($"Product #{i} data:");
 
-    Console.Write("OutSourced (y/n)? ");
-    char outSourced = char.Parse(Console.ReadLine()!);
+    Console.Write("Common, used or imported (c/u/i)? ");
+    char commonUsedImported = char.Parse(Console.ReadLine()!);
 
     Console.Write("Name: ");
     string name = Console.ReadLine()!;
 
-    Console.Write("Hours: ");
-    int hours = int.Parse(Console.ReadLine()!);
+    Console.Write("Price: ");
+    double price = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
 
-    Console.Write("Value per hour: ");
-    double valuePerHour = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
-
-    if (outSourced == 'y')
+    if (commonUsedImported == 'c')
+        products.Add(new Product(name, price));
+    else if (commonUsedImported == 'u')
     {
-        Console.Write("Addtional charge: ");
-        double additionalCharge = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
-
-        Employee outSorcedEmployee = new OutSourcedEmployee(name, hours, valuePerHour, additionalCharge);
-        employees.Add(outSorcedEmployee);
+        Console.Write("Manufacture date (DD/MM/YYYY): ");
+        DateTime manufactureDate = DateTime.Parse(Console.ReadLine()!);
+        products.Add(new UsedProduct(name, price, manufactureDate));
     }
-    else
+    else if (commonUsedImported == 'i')
     {
-        Employee employee = new Employee(name, hours, valuePerHour);
-        employees.Add(employee);
+        Console.Write("Customs fee: ");
+        double customFee = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
+        products.Add(new ImportedProduct(name, price, customFee));
     }
+
 }
 
 Console.WriteLine();
-Console.WriteLine("PAYMENTS: ");
+Console.WriteLine("PRICE TAGS:");
 
-foreach (Employee employee in employees)
+foreach (Product product in products)
 {
-    Console.WriteLine($"{employee.Name} - $ {employee.Payment().ToString("F2", CultureInfo.InvariantCulture)}");
+    Console.WriteLine(product);
 }
